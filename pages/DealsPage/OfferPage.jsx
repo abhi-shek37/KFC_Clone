@@ -8,7 +8,9 @@ const OfferPage = () => {
 
   useEffect(() => {
     const fetchOffers = async () => {
-      const response = await fetch("https://kfc-clone-backend-3.onrender.com/menu/getPost");
+      const response = await fetch(
+        "https://kfc-backend-oznp.onrender.com/menu/getPost"
+      );
       const data = await response.json();
       setDeals(data);
     };

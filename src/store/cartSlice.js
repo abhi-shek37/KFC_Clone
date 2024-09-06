@@ -5,14 +5,17 @@ export const addToCart = createAsyncThunk(
   async (item, { rejectWithValue }) => {
     try {
       const accessToken = localStorage.getItem('accessToken');
-      const response = await fetch('https://kfc-clone-backend-3.onrender.com/cart/postcart', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `${accessToken}`,
-        },
-        body: JSON.stringify(item),
-      });
+      const response = await fetch(
+        "https://kfc-backend-oznp.onrender.com/cart/postcart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${accessToken}`,
+          },
+          body: JSON.stringify(item),
+        }
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -30,13 +33,16 @@ export const fetchCart = createAsyncThunk(
     try {
       const accessToken = localStorage.getItem('accessToken');
       console.log("Access Token being sent:", accessToken); 
-      const response = await fetch('https://kfc-clone-backend-3.onrender.com/cart/getcart', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `${accessToken}`, 
-        },
-      });
+      const response = await fetch(
+        "https://kfc-backend-oznp.onrender.com/cart/getcart",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${accessToken}`,
+          },
+        }
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -54,12 +60,15 @@ export const deleteFromCart = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const accessToken = localStorage.getItem('accessToken');
-      const response = await fetch(`https://kfc-clone-backend-3.onrender.com/cart/detecart/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `${accessToken}`,
-        },
-      });
+      const response = await fetch(
+        `https://kfc-backend-oznp.onrender.com/cart/detecart/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `${accessToken}`,
+          },
+        }
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

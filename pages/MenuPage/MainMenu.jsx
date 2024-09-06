@@ -18,7 +18,7 @@ const MainMenu = ({ category }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        "https://kfc-clone-backend-3.onrender.com/menu/getPost",
+        "https://kfc-backend-oznp.onrender.com/menu/getPost",
         {
           method: "GET",
           headers: {

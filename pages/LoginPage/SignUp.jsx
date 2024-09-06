@@ -12,13 +12,16 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://kfc-clone-backend-3.onrender.com/user/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ emailId, password }), 
-      });
+      const response = await fetch(
+        "https://kfc-backend-oznp.onrender.com/user/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ emailId, password }),
+        }
+      );
   
       if (response.ok) {
         setSuccessMessage('User registered successfully');

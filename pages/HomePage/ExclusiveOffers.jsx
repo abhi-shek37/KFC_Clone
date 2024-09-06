@@ -12,7 +12,7 @@ const ExclusiveOffers = () => {
     const fetchOffers = async () => {
       try {
         const response = await fetch(
-          "https://kfc-clone-backend-3.onrender.com/menu/getPost"
+          "https://kfc-backend-oznp.onrender.com/menu/getPost"
         );
         const data = await response.json();
         setOffers(data.slice(0, 8));
